@@ -16,12 +16,12 @@ spec:
       - name: web
         image: nginx:latest
         ports:
-        - containerPort: 8080  # Asegúrate de que el puerto expuesto sea 8080
+        - containerPort: 80   # Cambié el puerto aquí a 80, ya que Nginx por defecto escucha en este puerto.
         readinessProbe:
           httpGet:
             path: /
-            port: 8080  # Asegúrate de que la sonda de lectura use el puerto 8080
-          initialDelaySeconds: 5  # Añade un pequeño retraso para que Nginx se inicie
+            port: 80   # Cambié el puerto de la sonda a 80
+          initialDelaySeconds: 5  # Retraso inicial para dar tiempo a Nginx para que se inicie
           periodSeconds: 10
           failureThreshold: 3
         resources:
