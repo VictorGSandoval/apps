@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: {{ .Values.image }}
+        image: ghcr.io/demouser/http-echo:1.0
         ports:
         - containerPort: 8080
         readinessProbe:
