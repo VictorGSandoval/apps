@@ -1,2 +1,2 @@
-image: ghcr.io/demouser/http-echo:1.0
+image: nginx:latest
 replicas: 1
