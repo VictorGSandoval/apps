@@ -16,9 +16,14 @@ spec:
       - name: web
         image: nginx:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 8080  # Asegúrate de que el puerto expuesto sea 8080
         readinessProbe:
-          httpGet: { path: /, port: 8080 }
+          httpGet:
+            path: /
+            port: 8080  # Asegúrate de que la sonda de lectura use el puerto 8080
+          initialDelaySeconds: 5  # Añade un pequeño retraso para que Nginx se inicie
+          periodSeconds: 10
+          failureThreshold: 3
         resources:
           requests: { cpu: "50m", memory: "64Mi" }
           limits:   { cpu: "200m", memory: "256Mi" }

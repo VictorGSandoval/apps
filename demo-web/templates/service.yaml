@@ -7,5 +7,5 @@ spec:
   selector:
     app: {{ include "demo-web.name" . }}
   ports:
-  - port: 80
-    targetPort: 8080
+  - port: 80          # El puerto que el servicio expondrá
+    targetPort: 8080   # El puerto en el contenedor donde Nginx escuchará
